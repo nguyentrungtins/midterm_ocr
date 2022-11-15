@@ -25,7 +25,7 @@ for color_name, lower1, upper1, lower2, upper2 in color_list:
     img[full_mask>0]=(0,255,0)
     result= cv2.bitwise_and(img, img, mask=full_mask)
 
-insert.insertID(result,"51900640-51900777")
+insert.insertID(img,"51900640-51900777")
 filename = "./output/ex1_c/"+"image"+".png"
 cv2.imwrite(filename,img)
 

@@ -8,7 +8,7 @@ def insertID(image,ID):
     font = cv2.FONT_HERSHEY_SIMPLEX
     
     # org
-    org = (50,50)
+    org = (5,30)
     
     # fontScale
     fontScale = 1
