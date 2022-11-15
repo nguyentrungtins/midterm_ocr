@@ -12,9 +12,10 @@ color_list = [
 
 
 
+img = cv2.imread("src/image.png")
+hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+result = img
 for color_name, lower1, upper1, lower2, upper2 in color_list:
-    img = cv2.imread("src/image.png")
-    hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     lower_mask = cv2.inRange(hsv_img, np.array(lower1), np.array(upper1))
     upper_mask = cv2.inRange(hsv_img, np.array(lower2), np.array(upper2))
 
@@ -23,9 +24,8 @@ for color_name, lower1, upper1, lower2, upper2 in color_list:
     # mask = cv2.inRange(hsv_img, np.array(lower_val), np.array(upper_val))
     img[full_mask>0]=(0,255,0)
     result= cv2.bitwise_and(img, img, mask=full_mask)
-    insert.insertID(result,"51900640-51900777")
-    filename = "./output/ex1_b/"+color_name+".png"
-    cv2.imwrite(filename,result)
 
-
+insert.insertID(result,"51900640-51900777")
+filename = "./output/ex1_c/"+"image"+".png"
+cv2.imwrite(filename,img)
 
