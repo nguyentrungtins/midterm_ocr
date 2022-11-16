@@ -10,7 +10,6 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # Find Canny edges
 edged = cv2.Canny(gray, 30, 200)
-cv2.waitKey(0)
 
 # Finding Contours
 # Use a copy of the image e.g. edged.copy()
